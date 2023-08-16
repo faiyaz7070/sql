@@ -1,0 +1,48 @@
+26  CREATE TABLE Rides (
+    id INT PRIMARY KEY,
+    driver_id INT,
+    passenger_id INT,
+    start_location VARCHAR(255),
+    end_location VARCHAR(255),
+    distance DECIMAL(5,2),
+    ride_time DECIMAL(5,2),
+    fare DECIMAL(6,2)
+);
+
+
+27    INSERT INTO Rides (id, driver_id, passenger_id, start_location, end_location, distance, ride_time, fare)
+VALUES
+    (1, 101, 201, '123 Main St', '456 Elm St', 10.75, 20.5, 30.00),
+    (2, 102, 202, '789 Oak Ave', '567 Pine Rd', 5.25, 12.75, 18.50),
+    (3, 103, 203, '321 Maple Dr', '987 Birch Ln', 7.80, 15.25, 25.75),
+    (4, 104, 204, '555 Willow Ct', '444 Cedar Pl', 3.20, 8.00, 12.50),
+    (5, 105, 205, '777 Rose Rd', '888 Lily Ln', 9.60, 18.00, 28.25);
+
+28 SELECT *
+FROM Rides
+ORDER BY fare DESC;
+
+29 SELECT SUM(distance) AS total_distance, SUM(fare) AS total_fare
+FROM Rides;
+
+
+ 30        SELECT AVG(ride_time) AS average_ride_time FROM Rides;
+
+31  SELECT *
+FROM Rides
+WHERE start_location LIKE '%Downtown%' OR end_location LIKE '%Downtown%';
+ 
+
+ 32   SELECT COUNT(*) AS ride_count
+FROM Rides
+WHERE driver_id = <your_driver_id>;
+  33  UPDATE Rides
+SET fare = <new_fare_value>
+WHERE id = 4;
+34   UPDATE Rides
+SET fare = <new_fare_value>
+WHERE id = 4;
+
+
+35  DELETE FROM Rides
+WHERE id = 2;

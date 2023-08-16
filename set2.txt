@@ -1,0 +1,22 @@
+16  crate table resturant (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    cuisine_type VARCHAR(100),
+    location VARCHAR(255),
+    average_rating DECIMAL(3,2),
+    delivery_available BOOLEAN
+)
+
+17  INSERT INTO resturant (id ,name ,cuisine_type,location_rating,average_rating,delivery_available)
+
+VALUES (),(),(),(),()
+
+18 SELECT * FROM resturant ORDER BY average_rating DESC
+
+19 SELECT * FROM resturant WHERE delivery_available=1 AND average_rating>4
+20 SELECT * FROM resturant WHERE cuisine_type IS NULL cuisine_type='';
+21  SELECT count(*) as totol_resturant FROM resturant WHERE delivery_available=true 
+22 SELECT * FROM resturant WHERE location LIKE '% New York%'
+23 SELECT AVG(average_rating) as average_rate  FROM resturant
+24 SELECT * FROM  resturant ORDER BY average_rating DESC   limit 5 
+25 DELETE FROM resturant WHERE id=3;
